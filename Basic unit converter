@@ -1,0 +1,147 @@
+#include <stdio.h>
+#include<stdlib.h>
+int category;
+int tempChoice;
+int currencyChoice;
+int massChoice;
+int lengthChoice;
+float userinputF;
+float userinputC; 
+float userinputRUtoUSD;
+float userinputUSDtoRU;
+float userinputKg;
+float userinputGram;
+float userinputmetre;
+float userinputkm;
+float fahrenheitToCelcius;
+float celciusToFahrenheit;
+float RUtoUSD;
+float USDtoRU;
+float GramtoKg;
+float KgtoGram;
+float metretokm;
+float kmtometre;
+void temperature();
+void currency();
+void mass();
+void length();
+void main()
+{
+printf("Welcome to Unit Converter! \n");
+printf("Here is a list of conversation to choose from: \n");
+printf("Press 1.Temperature,2.Currency,3.Mass,4.Length,5.Exit \n");
+while(1)
+{
+    printf("Please Enter The Category You Want To Convert:\n");
+    scanf("%d",&category);
+    switch(category)
+    {
+        case 1:temperature();
+        break;
+        case 2:currency();
+        break;
+        case 3:mass();
+        break;
+        case 4:length();
+        break;
+        case 5:exit(0); 
+    }
+}
+}
+void temperature()
+{ 
+      printf("Welcome to Temperature Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for Fahrenheit to Celsius. \n");
+      printf("Enter 2 for Celsius to Fahrenheit. \n");
+      scanf("%d",&tempChoice);
+      if(tempChoice == 1)
+      {
+          printf("Please Enter the Degree in Fahrenheit : \n");
+          scanf("%f",&userinputF);
+          fahrenheitToCelcius =  ((userinputF-32) * (5.0/9.0));
+          printf("Celcius: %.2f\n",fahrenheitToCelcius);
+      }
+      else if(tempChoice == 2)
+      {
+        printf("Please Enter the Degree in Celcius: \n");
+        scanf("%f",&userinputC);
+        celciusToFahrenheit = ((9.0/5.0)*userinputC + 32);
+        printf("Fahrenheit: %.2f\n",celciusToFahrenheit);
+      }
+      else
+        printf("Please Enter the Correct Choice \n");
+}
+void currency()
+{ 
+      printf("Welcome to Currency Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for RUPEES to USD. \n");
+      printf("Enter 2 for USD to RUPEES. \n");
+      scanf("%d",&currencyChoice);
+      if(currencyChoice == 1)
+      {
+          printf("Please Enter the Amount in RUPEES: \n");
+          scanf("%f",&userinputRUtoUSD);
+          RUtoUSD= userinputRUtoUSD * 0.012;
+          printf("USD: %.2f\n",RUtoUSD);
+      }
+      else if(currencyChoice == 2)
+      {
+          printf("Please Enter the Amount in USD: \n");
+          scanf("%f",&userinputUSDtoRU);
+          USDtoRU = userinputUSDtoRU * 83.12;
+          printf("RUPEES: %.2f\n",USDtoRU);
+      }
+      else
+        printf("Please Enter the Correct Choice \n");
+}
+void mass()
+{
+      printf("Welcome to Mass Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for Gram to KG. \n");
+      printf("Enter 2 for KG to Gram. \n");
+      scanf("%d",&massChoice);
+      if(massChoice == 1)
+      {
+          printf("Please Enter Mass in GRAMS: \n");
+          scanf("%f",&userinputGram);
+          GramtoKg = userinputGram / 1000;
+          printf("KG: %.2f\n",GramtoKg);
+      }
+      
+else if(massChoice == 2) 
+      {
+          printf("Please Enter Mass in KG: \n");
+          scanf("%f",&userinputKg);
+          KgtoGram = userinputKg *1000;
+          printf("GRAM: %.2f\n",KgtoGram);
+      }
+      else 
+        printf("Please Enter the Correct Choice \n");
+}
+void length()
+{
+    printf("Welcome to Length Converter! \n");
+    printf("Here is a list of conversations to choose from: \n");
+    printf("Enter 1 for Metre to KM. \n");
+    printf("Enter 2 for KM to Metre. \n");
+    scanf("%d",&lengthChoice);
+    if(lengthChoice ==1)
+    {
+      printf("Please Enter the Length in Metre: \n");
+      scanf("%f",&userinputmetre);
+      metretokm = userinputmetre/1000;
+      printf("KM:%.2f\n",metretokm);
+    }
+    else if(lengthChoice == 2)
+    {
+      printf("Please Enter the Length in KM: \n");
+      scanf("%f",&userinputkm);
+      kmtometre = userinputkm*1000;
+      printf("METRE:%.2f\n",kmtometre);
+    }
+}
+
+
